@@ -17,38 +17,38 @@
 </head>
 
 <body>
-  <h1>PHP Recap</h1>
-  <?php
-  /*
-      $message = 'Hello';
-
-      echo $message . "double quote" . ' ' . 'adding strings together';
-      // we use the . to concatonate strings together
-
-      echo "$message Everyone."
-      // if we want to use variables within strings we must use double quotation mark.
-      */
-  ?>
+  <h1>Recommended Books</h1>
 
   <?php
-  $name = "Schopenhauer";
-  $read = true;
+  // $books = ['Do Androids Sleep', "The Langoliers", "Hail Mary"]
 
-  if ($read) {
-    $message = "You have read $name";
-    // this variable will only be created when read is true.
-  } else {
-    $message = "You have not read $name";
-  }
+  $books = [
+    [
+      'name' => 'Do Androids Dream of Electric Sheep',
+      'author' => 'Philip K. Dick',
+      'purchaseUrl' => 'http://example.com'
+    ],
+    [
+      'name' => 'Project Hail Mary',
+      'author' => 'Andy Weir',
+      'purchaseUrl' => 'http://example.com'
+    ]
+  ]
   ?>
 
-  <h2>
-    <?php echo $message; ?>
-    <?= $message ?>
-    <!-- echo short syntax -->
-  </h2>
 
+  <ul>
+    <?php foreach ($books as $book) {
+      echo "<li>{$book} &deg;</li>";
+    }
+    ?>
 
+    <?php foreach ($books as $book) : ?>
+      <li><?= $book ?></li>
+    <?php endforeach; ?>
+  </ul>
+
+  <?= $books[2] ?>
 </body>
 
 </html>
