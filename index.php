@@ -33,22 +33,22 @@
       'author' => 'Andy Weir',
       'purchaseUrl' => 'http://example.com'
     ]
+    //associative arrays(key-value pairs)
   ]
   ?>
 
 
   <ul>
-    <?php foreach ($books as $book) {
-      echo "<li>{$book} &deg;</li>";
-    }
-    ?>
-
     <?php foreach ($books as $book) : ?>
-      <li><?= $book ?></li>
+      <li>
+        <a href="<?= $book['purchaseUrl'] ?>">
+          <?= $book['name']; ?>
+        </a>
+      </li>
     <?php endforeach; ?>
   </ul>
 
-  <?= $books[2] ?>
+
 </body>
 
 </html>
